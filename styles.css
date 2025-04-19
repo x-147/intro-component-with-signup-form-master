@@ -126,8 +126,13 @@ body {
   border-radius: 5px;
   text-indent: 1rem;
 
-  border-color: black;
   border-width: 1px;
+  border-color: hsl(246, 25%, 90%);
+  border-style: solid;
+}
+
+.right-container-form input:focus {
+  outline-color: hsl(248, 32%, 90%);
 }
 
 .right-container-form button {
@@ -138,6 +143,10 @@ body {
   border-width: 1px;
   border-radius: 5px;
   border-style: none;
+
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
 }
 
 /* terms of service */
