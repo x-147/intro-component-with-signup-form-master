@@ -24,8 +24,10 @@ body {
   background-color: grey;
 }
 
+/* left container */
+
 .left-container {
-  padding-left: 7rem;
+  padding-left: 15rem;
 }
 
 .left-container-text {
@@ -35,26 +37,124 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  height: 170px;
+  height: 180px;
+  width: 480px;
 }
 
 .left-container-heading {
   color: white;
-  font-size: 2.1rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  /* letter-spacing: 0.1rem; */
-  line-height: 2.5rem;
+  line-height: 2.6rem;
 
-  margin-right: 10rem;
+  margin-right: 8rem;
 }
 
 .left-container-description {
   color: white;
   font-size: 0.8rem;
 
+  letter-spacing: 0.01rem;
+  line-height: 1.4rem;
+  opacity: 0.8;
+  font-weight: 400;
+
   margin-right: 2rem;
 }
 
+/* right container, the form */
+
 .right-container {
-  padding-right: 7rem;
+  padding-right: 15rem;
+
+  /* this flex is applying to all the input boxes */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* call to action bar */
+
+.right-container-cta {
+  height: 50px;
+  width: 400px;
+
+  border-radius: 8px;
+
+  background-color: hsl(248, 32%, 49%);
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 0.8rem;
+}
+
+.right-container-cta span:first-of-type {
+  font-weight: 600;
+}
+
+.right-container-cta span:last-of-type {
+  opacity: 0.8;
+}
+
+/* form */
+
+.right-container-form {
+  width: 100%;
+
+  padding: 1.5rem;
+  border-radius: 8px;
+
+  background-color: white;
+}
+
+.input-boxes-container {
+  height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right-container-form input {
+  height: 50px;
+  display: block;
+
+  border-radius: 5px;
+  text-indent: 1rem;
+
+  border-color: black;
+  border-width: 1px;
+}
+
+.right-container-form button {
+  height: 45px;
+
+  background-color: hsl(154, 59%, 51%);
+  border-color: hsl(154, 59%, 51%);
+  border-width: 1px;
+  border-radius: 5px;
+  border-style: none;
+}
+
+/* terms of service */
+
+.tiny-text-tos {
+  font-size: 8px;
+  font-weight: 600;
+
+  text-align: center;
+
+  margin-top: 10px;
+}
+
+.tiny-text-tos span:first-of-type {
+  opacity: 0.3;
+}
+
+.tiny-text-tos span:last-of-type {
+  color: hsl(0, 100%, 74%);
 }
