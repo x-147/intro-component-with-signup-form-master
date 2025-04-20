@@ -97,3 +97,8 @@ This challenge is completely free. Please share it with anyone who will find it 
 ### Notes to self:  🚨
 
 - transform: translate(x, y) for pixel perfect positioning of icons
+- query selectors (document.querySelector), event listeners (addEventListener)
+- focus event, click event, blur event
+- focus can also be set via dom, for example element loses focus on submit, so inputElement.focus(). css style should then apply
+- setting css property with empty string is the standard way to reset inline styles in js
+- querySelectorAll returns multiple nodes for comma separated classes, iterate through the array

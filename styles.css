@@ -138,8 +138,13 @@ body {
 }
 
 .right-container-form input:focus {
-  outline-color: hsl(248, 32%, 90%);
+  outline: solid hsl(248, 32%, 90%);
 }
+
+/* note: managing via js */
+/* .right-container-form input.invalid:focus {
+  outline: 0.125rem solid hsl(0, 100%, 74%);
+} */
 
 .right-container-form button {
   height: 45px;
@@ -214,4 +219,8 @@ body {
   top: 50%;
   right: 0%;
   transform: translate(-50%, -50%);
+}
+
+.show {
+  display: block;
 }

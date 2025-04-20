@@ -49,10 +49,10 @@
         <span>then $20/mo. thereafter</span>
       </div>
       <div class="right-container-form">
-        <form action="/submit-form" method="post">
+        <form action="/submit-form" method="post" novalidate>
           <div class="input-boxes-container">
             <div class="first-name-container">
-              <input type="text" placeholder="First Name" />
+              <input type="text" name="first-name" placeholder="First Name" />
               <div class="error-text">First Name cannot be empty</div>
               <img
                 class="error-icon"
@@ -62,7 +62,7 @@
             </div>
 
             <div class="last-name-container">
-              <input type="text" placeholder="Last Name" />
+              <input type="text" name="last-name" placeholder="Last Name" />
               <div class="error-text">Last Name cannot be empty</div>
               <img
                 class="error-icon"
@@ -72,7 +72,11 @@
             </div>
 
             <div class="email-address-container">
-              <input type="email" placeholder="Email Address" />
+              <input
+                type="email"
+                name="email-address"
+                placeholder="Email Address"
+              />
               <div class="error-text">Looks like this is not an email</div>
               <img
                 class="error-icon"
@@ -82,7 +86,7 @@
             </div>
 
             <div class="password-container">
-              <input type="text" placeholder="Password" />
+              <input type="password" name="password" placeholder="Password" />
               <div class="error-text">Password cannot be empty</div>
               <img
                 class="error-icon"
@@ -104,28 +108,57 @@
 
     <script>
       const formElement = document.querySelector('form');
-      const inputElement = document.querySelector("input[type='email']");
-      const errorImgWrapper = document.querySelector('.error-icon-wrapper');
-      const errorText = document.querySelector('.error-text');
+      const inputElementFirstName = document.querySelector(
+        "input[name='first-name']"
+      );
+      const inputElementLastName = document.querySelector(
+        "input[name='last-name']"
+      );
+      const inputElementEmail = document.querySelector("input[type='email']");
+      const inputElementPassword = document.querySelector(
+        "input[name='password']"
+      );
+
+      const fNameErrorItems = document.querySelectorAll(
+        '.first-name-container .error-text, .first-name-container .error-icon'
+      );
+
+      const lNameErrorItems = document.querySelectorAll(
+        '.last-name-container .error-text, .last-name-container .error-icon'
+      );
+
+      const emailErrorItems = document.querySelectorAll(
+        '.email-address-container .error-text, .email-address-container .error-icon'
+      );
+
+      const passwordErrorItems = document.querySelectorAll(
+        '.password-container .error-text, .password-container .error-icon'
+      );
+
+      function validate(inputElement, value, errorItems) {
+        if (!value) {
+          errorItems.forEach((item) => item.classList.add('show'));
+          inputElement.style.outline = '0.125rem solid red';
+          inputElement.style.border = 'none';
+        } else {
+          inputElement.style.border = '1px solid hsl(246, 25%, 90%)';
+          inputElement.style.outline = ''; // resetting outline
+          errorItems.forEach((item) => item.classList.remove('show'));
+        }
+      }
 
       formElement.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const isValid = validator.isEmail(event.target['email-address'].value);
+        const firstName = event.target['first-name'].value;
+        const lastName = event.target['last-name'].value;
+        const email = validator.isEmail(event.target['email-address'].value);
+        const password = event.target['password'].value;
 
-        if (!isValid) {
-          console.log('invalid email');
-          errorImgWrapper.classList.remove('disable');
-          errorText.classList.remove('disable');
-          inputElement.style.outline = '0.125rem solid red';
-          inputElement.style.border = 'none';
-        }
-      });
-
-      inputElement.addEventListener('click', (event) => {
-        errorImgWrapper.classList.add('disable');
-        errorText.classList.add('disable');
-        inputElement.style.outline = 'none';
+        validate(inputElementFirstName, firstName, fNameErrorItems);
+        validate(inputElementLastName, lastName, lNameErrorItems);
+        validate(inputElementEmail, email, emailErrorItems);
+        validate(inputElementPassword, password, passwordErrorItems);
       });
     </script>
   </body>
