@@ -240,6 +240,9 @@ body {
     background-image: url('./images/bg-intro-mobile.png');
     background-repeat: no-repeat;
     gap: 2rem;
+
+    min-height: 100dvh;
+    height: auto;
   }
 
   /* left container */
