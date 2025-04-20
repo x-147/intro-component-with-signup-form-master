@@ -102,3 +102,6 @@ This challenge is completely free. Please share it with anyone who will find it 
 - focus can also be set via dom, for example element loses focus on submit, so inputElement.focus(). css style should then apply
 - setting css property with empty string is the standard way to reset inline styles in js
 - querySelectorAll returns multiple nodes for comma separated classes, iterate through the array
+- use rem just for typography when implementing responsive mobile design (what i found)
+- line-height same as container height gives us vertical centering (works by equally distributing space around text), horizontal centerial text-align: center
+- another way to center vertically is to have the same padding on top and bottom.

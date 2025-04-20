@@ -224,3 +224,148 @@ body {
 .show {
   display: block;
 }
+
+@media (max-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+
+  body {
+    grid-template-columns: 500px;
+    grid-template-rows: 200px;
+    background-image: url('./images/bg-intro-mobile.png');
+  }
+
+  /* left container */
+
+  .left-container {
+    padding-left: 0;
+  }
+
+  .left-container-text {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .left-container-heading {
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  .left-container-description {
+    font-size: 1.1rem;
+    text-align: center;
+    width: 260px;
+    margin: 0;
+  }
+
+  .right-container {
+    padding-right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  /* call to action bar */
+
+  .right-container-cta {
+    height: 80px;
+    width: 300px;
+
+    display: block;
+    text-align: center;
+    padding: 20px;
+
+    font-size: 1.1rem;
+  }
+
+  .right-container-cta span:first-of-type {
+    font-weight: 600;
+  }
+
+  .right-container-cta span:last-of-type {
+    opacity: 0.8;
+  }
+
+  /* form */
+
+  .right-container-form {
+    width: 300px;
+
+    padding: 20px;
+    border-radius: 8px;
+
+    background-color: white;
+  }
+
+  /* this is inside the form element */
+  /* and it arranges the input boxes with flex */
+  .input-boxes-container {
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .right-container-form input {
+    height: 45px;
+    width: 100%;
+    display: block;
+
+    border-radius: 5px;
+    text-indent: 1rem;
+
+    border-width: 1px;
+    border-color: hsl(246, 25%, 90%);
+    border-style: solid;
+
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .right-container-form input:focus {
+    outline: solid hsl(248, 32%, 90%);
+  }
+
+  /* note: managing via js */
+  /* .right-container-form input.invalid:focus {
+  outline: 0.125rem solid hsl(0, 100%, 74%);
+} */
+
+  .right-container-form button {
+    height: 42px;
+
+    background-color: hsl(154, 59%, 51%);
+    border-color: hsl(154, 59%, 45%);
+    border-width: 2px;
+    border-radius: 5px;
+    border-style: solid;
+
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+
+    cursor: pointer;
+  }
+
+  .error-text {
+    font-size: 0.65rem;
+    font-weight: 500;
+    font-style: italic;
+    text-align: end;
+
+    position: absolute;
+    top: 45px;
+    right: 0px;
+
+    color: hsl(0, 100%, 74%);
+  }
+}
