@@ -21,6 +21,12 @@
       rel="stylesheet"
     />
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/validator@13.15.0/validator.min.js"
+      integrity="sha256-jMd1rzzIbtNfa7snYgSscu+0czTwUOoQowqWI+faIOc="
+      crossorigin="anonymous"
+    ></script>
+
     <title>Frontend Mentor | Intro component with sign up form</title>
   </head>
   <body>
@@ -45,10 +51,46 @@
       <div class="right-container-form">
         <form action="/submit-form" method="post">
           <div class="input-boxes-container">
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Second Name" />
-            <input type="email" placeholder="Email Address" />
-            <input type="text" placeholder="Password" />
+            <div class="first-name-container">
+              <input type="text" placeholder="First Name" />
+              <div class="error-text">First Name cannot be empty</div>
+              <img
+                class="error-icon"
+                src="./images/icon-error.svg"
+                alt="icon-error"
+              />
+            </div>
+
+            <div class="last-name-container">
+              <input type="text" placeholder="Last Name" />
+              <div class="error-text">Last Name cannot be empty</div>
+              <img
+                class="error-icon"
+                src="./images/icon-error.svg"
+                alt="icon-error"
+              />
+            </div>
+
+            <div class="email-address-container">
+              <input type="email" placeholder="Email Address" />
+              <div class="error-text">Looks like this is not an email</div>
+              <img
+                class="error-icon"
+                src="./images/icon-error.svg"
+                alt="icon-error"
+              />
+            </div>
+
+            <div class="password-container">
+              <input type="text" placeholder="Password" />
+              <div class="error-text">Password cannot be empty</div>
+              <img
+                class="error-icon"
+                src="./images/icon-error.svg"
+                alt="icon-error"
+              />
+            </div>
+
             <button type="submit">Claim your free trial</button>
           </div>
         </form>
@@ -59,10 +101,32 @@
         </div>
       </div>
     </div>
-    <!-- 
 
+    <script>
+      const formElement = document.querySelector('form');
+      const inputElement = document.querySelector("input[type='email']");
+      const errorImgWrapper = document.querySelector('.error-icon-wrapper');
+      const errorText = document.querySelector('.error-text');
 
+      formElement.addEventListener('submit', (event) => {
+        event.preventDefault();
 
- -->
+        const isValid = validator.isEmail(event.target['email-address'].value);
+
+        if (!isValid) {
+          console.log('invalid email');
+          errorImgWrapper.classList.remove('disable');
+          errorText.classList.remove('disable');
+          inputElement.style.outline = '0.125rem solid red';
+          inputElement.style.border = 'none';
+        }
+      });
+
+      inputElement.addEventListener('click', (event) => {
+        errorImgWrapper.classList.add('disable');
+        errorText.classList.add('disable');
+        inputElement.style.outline = 'none';
+      });
+    </script>
   </body>
 </html>

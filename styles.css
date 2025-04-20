@@ -104,7 +104,7 @@ body {
 .right-container-form {
   width: 450px;
 
-  padding: 1.5rem;
+  padding: 30px;
   border-radius: 8px;
 
   background-color: white;
@@ -113,7 +113,7 @@ body {
 /* this is inside the form element */
 /* and it arranges the input boxes with flex */
 .input-boxes-container {
-  height: 300px;
+  height: 350px;
 
   display: flex;
   flex-direction: column;
@@ -121,7 +121,8 @@ body {
 }
 
 .right-container-form input {
-  height: 50px;
+  height: 55px;
+  width: 100%;
   display: block;
 
   border-radius: 5px;
@@ -130,6 +131,10 @@ body {
   border-width: 1px;
   border-color: hsl(246, 25%, 90%);
   border-style: solid;
+
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
 }
 
 .right-container-form input:focus {
@@ -148,6 +153,8 @@ body {
   text-transform: uppercase;
   color: white;
   font-weight: 600;
+
+  cursor: pointer;
 }
 
 /* terms of service */
@@ -167,4 +174,44 @@ body {
 
 .tiny-text-tos span:last-of-type {
   color: hsl(0, 100%, 74%);
+}
+
+/* form error styling */
+
+.first-name-container {
+  position: relative;
+}
+
+.last-name-container {
+  position: relative;
+}
+
+.email-address-container {
+  position: relative;
+}
+
+.password-container {
+  position: relative;
+}
+
+.error-text {
+  display: none;
+  font-size: 0.65rem;
+  font-weight: 500;
+  font-style: italic;
+  text-align: end;
+
+  position: absolute;
+  top: 55px;
+  right: 0px;
+
+  color: hsl(0, 100%, 74%);
+}
+
+.error-icon {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
 }
