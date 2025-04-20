@@ -105,3 +105,5 @@ This challenge is completely free. Please share it with anyone who will find it 
 - use rem just for typography when implementing responsive mobile design (what i found)
 - line-height same as container height gives us vertical centering (works by equally distributing space around text), horizontal centerial text-align: center
 - another way to center vertically is to have the same padding on top and bottom.
+- fixed sizing can break mobile, use 1fr for column so it takes the length of the screen and auto for row so it fits for content
+- 100dvh is fixing the height to viewport height giving no space to grow. depending on design requirements, set to min-height: 100dvh, height: auto

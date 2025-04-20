@@ -233,9 +233,13 @@ body {
   }
 
   body {
-    grid-template-columns: 500px;
-    grid-template-rows: 200px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-content: center;
     background-image: url('./images/bg-intro-mobile.png');
+    background-repeat: no-repeat;
+    gap: 2rem;
   }
 
   /* left container */
